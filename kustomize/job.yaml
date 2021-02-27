@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: raise-hpa
+  labels:
+    app: raise-hpa
+spec:
+  template:
+    metadata:
+      name: raise-hpa
+      labels:
+        app: raise-hpa
+    spec:
+      serviceAccountName: sre
+      containers:
+      - name: raise-hpa
+        image: asia.gcr.io/pl-web-219210/raise-hpa:latest
+      restartPolicy: Never
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: gcr-json-key

@@ -1,10 +1,10 @@
 apiVersion: skaffold/v2beta12
 kind: Config
 metadata:
-  name: raise-hpa
+  name: auto-raise-hpa
 build:
   artifacts:
-  - image: asia.gcr.io/pl-web-219210/raise-hpa
+  - image: asia.gcr.io/pl-web-219210/auto-raise-hpa
     kaniko: {}
   googleCloudBuild:
     projectId: pl-web-219210
